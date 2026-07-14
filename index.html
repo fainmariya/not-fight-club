@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Not Fight Club</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+    
+</head>
+<body>
+    <main id="app">
+        <section class="registration screen" >
+            <div class="registration__container">
+                <h1 class="registration__title">Not Fight Club</h1>
+                <p class="registration__description">
+                    Enter your name to create a fighter
+                </p>
+                <form class="registration__form">
+                    <label class="registration__label" for="player-name">Fighter name</label>
+                    <input 
+                       class="registration__input" 
+                       name="playerName" 
+                       type="text" 
+                       minlength="2" 
+                       maxlength="20" 
+                       autocomplete="name"
+                       id="player-name" 
+                       placeholder="Enter your name" 
+                       required>
+                    <p class="registration__error"></p>
+                    
+                    <button class="registration__button" type="submit" >Create fighter</button>
+                </form>
+                
+            </div>
+        </section>
+        <section class="home screen" hidden>
+            <h2 class="home__title">Hi!</h2>
+            <p class="home__player-name"></p>
+            <button class="home__start-button" type="button">Start</button>
+            <nav class="navigation">
+                <button type="button" data-screen="home" class="navigation__button">Home</button>
+                <button type="button" data-screen="character" class="navigation__button">Character</button>
+                <button type="button" data-screen="settings" class="navigation__button">Settings</button>
+            </nav>
+
+        </section>
+        <section class="character screen" hidden>
+            <nav class="navigation">
+                <button type="button" data-screen="home" class="navigation__button">Home</button>
+                <button type="button" data-screen="character" class="navigation__button">Character</button>
+                <button type="button" data-screen="settings" class="navigation__button">Settings</button>
+            </nav>
+       
+            <div class="character__data">
+                <h2 class="character__title">Character</h2>
+                <img src="./assets/images/avatars/Avatar-1.png" class="character__avatar" alt="Player avatar">
+                <p class="character__name">Player name</p>
+                <p>Wins: <span class="character__wins-value">0</span></p>
+                <p>Losses: <span class="character__losses-value">0</span></p>    
+           
+            </div>
+            <div class="character__avatar-picker">
+                <h3 class="character__avatar-title">Choose avatar</h3>
+                <div class="character__avatar-options">
+                    <button class="character__avatar-button" type="button" data-avatar="avatar-1.png">Avatar 1</button>
+                    <button class="character__avatar-button" type="button" data-avatar="avatar-2.png">Avatar 2</button>
+                    <button class="character__avatar-button" type="button" data-avatar="avatar-3.png">Avatar 3</button>
+                </div>
+
+            </div>
+            
+        </section>
+        <section class="settings screen" hidden>
+            <nav class="navigation">
+                <button type="button" data-screen="home" class="navigation__button">Home</button>
+                <button type="button" data-screen="character" class="navigation__button">Character</button>
+                <button type="button" data-screen="settings" class="navigation__button">Settings</button>
+            </nav>
+            <h2 class="settings__title">Settings</h2>
+            <p class="settings__description">Change your fighter name</p>
+            <form class="settings__form">
+                <label class="settings__label" for="settings-player-name">New fighter name</label>
+                <input
+                    class="settings__input"
+                    type="text"
+                    id="settings-player-name"
+                    name="newPlayerName"
+                    minlength="2"
+                    maxlength="20"
+                    autocomplete="name"
+                    placeholder="Add new name"
+                    required
+                    >
+                <p class="settings__error"></p>
+                <button class="settings__button" type="submit">Save name</button>
+            </form>
+
+        </section>
+        <section class="battle screen" hidden>
+            <div class="battle__header">
+                <button 
+                   class="battle__exit-button" 
+                   type="button"
+                   data-screen="home">
+                   Back to home
+                </button>
+                <p>Turn <span class="battle__turn">1</span></p>
+
+            </div>
+            <div class="battle__arena">
+                <div class="battle__player">
+                    <p class="battle__player-name">Player</p>
+                    <img src="./assets/images/avatars/Avatar-1.png" class="battle__player-image" alt="Player fighter">
+                    <p>HP
+                        <span class="battle__player-current-hp">120</span>
+                        /
+                        <span class="battle__player-max-hp">120</span>
+                    </p>
+                    <div class="battle__health-bar">
+                        <div class="battle__health-fill battle__player-health-fill"></div>
+                    </div>
+                    
+                </div>
+                <div class="battle__versus">
+                    <p class="battle__versus-title">VS</p>
+
+                </div>
+                <div class="battle__opponent">
+                    <p class="battle__opponent-name">Opponent</p>
+                    <img src="./assets/images/opponents/skeleton.png" class="battle__opponent-image" alt="Opponent fighter">
+                    <p>HP
+                        <span class="battle__opponent-current-hp">120</span>
+                        /
+                        <span class="battle__opponent-max-hp">120</span>
+                    </p>
+                    <div class="battle__health-bar">
+                        <div class="battle__health-fill battle__opponent-health-fill"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="battle__controls">
+                <form class="battle__form">
+                    <fieldset class="battle__attack-zones">
+                        <legend class="battle__zones-title">Choose one attack zone</legend>
+                        <div class="battle__zone-option">
+                            <input
+                                class="battle__attack-input"
+                                type="radio" 
+                                value="head"
+                                id="attack-head" 
+                                name="attackZone">
+                            <label class="battle__zone-label" for="attack-head">Head</label>
+                        </div>
+                        <div class="battle__zone-option">
+                            <input
+                                class="battle__attack-input"
+                                type="radio" 
+                                value="chest"
+                                id="attack-chest" 
+                                name="attackZone">
+                            <label class="battle__zone-label" for="attack-chest">Chest</label>
+                        </div>
+                        <div class="battle__zone-option">
+                            <input
+                                class="battle__attack-input"
+                                type="radio" 
+                                value="stomach"
+                                id="attack-stomach" 
+                                name="attackZone">
+                            <label class="battle__zone-label" for="attack-stomach">Stomach</label>
+                        </div>    
+                        <div class="battle__zone-option">
+                            <input
+                                class="battle__attack-input"
+                                type="radio" 
+                                value="legs"
+                                id="attack-legs" 
+                                name="attackZone">
+                            <label class="battle__zone-label" for="attack-legs">Legs</label>
+                        </div>    
+                        
+                    </fieldset>
+                    <fieldset class="battle__defense-zones">
+                        <legend class="battle__zones-title">Choose two defense zones</legend>
+                        <div class="battle__defense-zone-option">
+                            <input
+                                class="battle__defense-input"
+                                type="checkbox" 
+                                value="head"
+                                id="defense-head" 
+                                name="defenseZone">
+                            <label class="battle__defense-zone-label" for="defense-head">Head</label>
+                        </div>
+                        <div class="battle__defense-zone-option">
+                            <input
+                                class="battle__defense-input"
+                                type="checkbox" 
+                                value="chest"
+                                id="defense-chest" 
+                                name="defenseZone">
+                            <label class="battle__defense-zone-label" for="defense-chest">Chest</label>
+                        </div>
+                        <div class="battle__defense-zone-option">
+                            <input
+                                class="battle__defense-input"
+                                type="checkbox" 
+                                value="stomach"
+                                id="defense-stomach" 
+                                name="defenseZone">
+                            <label class="battle__defense-zone-label" for="defense-stomach">Stomach</label>
+                        </div>
+                        <div class="battle__defense-zone-option">
+                            <input
+                                class="battle__defense-input"
+                                type="checkbox" 
+                                value="legs"
+                                id="defense-legs" 
+                                name="defenseZone">
+                            <label class="battle__defense-zone-label" for="defense-legs">Legs</label>
+                        </div>
+
+                        
+                    </fieldset>
+                    <p class="battle__selection-message"></p>
+                    <button 
+                       class="battle__attack-button"
+                       type="submit"
+                       disabled> 
+                       Attack
+                    </button>
+                </form>
+                
+            </div>
+            <section class="battle__log">
+                <h3 class="battle__log-title">Battle log</h3>
+                <ul class="battle__log-list" aria-live="polite">
+
+                </ul>
+            </section>
+
+        </section>
+    </main>
+    <script src="./js/app.js" type="module"></script>
+</body>
+
+</html>
