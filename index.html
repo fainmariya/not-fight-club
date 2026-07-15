@@ -6,6 +6,7 @@
     <title>Not Fight Club</title>
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/battle.css">
     
 </head>
 <body>
@@ -53,23 +54,68 @@
                 <button type="button" data-screen="settings" class="navigation__button">Settings</button>
             </nav>
        
-            <div class="character__data">
+            <div class="character__container">
                 <h2 class="character__title">Character</h2>
-                <img src="./assets/images/avatars/Avatar-1.png" class="character__avatar" alt="Player avatar">
-                <p class="character__name">Player name</p>
-                <p>Wins: <span class="character__wins-value">0</span></p>
-                <p>Losses: <span class="character__losses-value">0</span></p>    
-           
-            </div>
-            <div class="character__avatar-picker">
+                <div class="character__profile">
+                    <img 
+                       class="character__avatar"
+                       src="./assets/images/avatars/Avatar-1.png"  
+                       alt="Player avatar"
+                    >
+                    <div class="character__info">
+                        <p class="character__name">Player name</p>
+        
+                        <div class="character__stats">
+                            <p class="character__wins">
+                                Wins
+                                <span class="character__wins-value">0</span>
+                            </p>
+        
+                            <p class="character__losses">
+                                Losses
+                                <span class="character__losses-value">0</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="character__avatar-picker">
                 <h3 class="character__avatar-title">Choose avatar</h3>
                 <div class="character__avatar-options">
-                    <button class="character__avatar-button" type="button" data-avatar="avatar-1.png">Avatar 1</button>
-                    <button class="character__avatar-button" type="button" data-avatar="avatar-2.png">Avatar 2</button>
-                    <button class="character__avatar-button" type="button" data-avatar="avatar-3.png">Avatar 3</button>
+                    <button 
+                       class="character__avatar-button" 
+                       type="button" 
+                       data-avatar="Avatar-1.png">
+                       <img
+                            src="./assets/images/avatars/Avatar-1.png"
+                            alt="Avatar 1"
+                        >
+                       Avatar 1
+                    </button>
+                    <button 
+                        class="character__avatar-button" 
+                        type="button" 
+                        data-avatar="Avatar-2.png">
+                        <img
+                            src="./assets/images/avatars/Avatar-2.png"
+                            alt="Avatar 2"
+                        >
+                        Avatar 2
+                    </button>
+                    <button 
+                       class="character__avatar-button" 
+                       type="button" 
+                       data-avatar="Avatar-3.png">
+                       <img
+                            src="./assets/images/avatars/Avatar-3.png"
+                            alt="Avatar 3"
+                        >
+                       Avatar 3
+                    </button>
                 </div>
 
             </div>
+            </div>
+            
             
         </section>
         <section class="settings screen" hidden>
