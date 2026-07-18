@@ -650,3 +650,14 @@ img {
         grid-template-columns: 1fr;
     }
 }
+.battle__zone-label {
+    display: block;
+    padding: 10px 16px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    cursor: pointer
+}
+.battle__attack-input:checked + .battle__zone-label {
+    border-color: #c59a58;
+    background-color: #3a3024;
+}
