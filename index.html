@@ -37,15 +37,16 @@
             </div>
         </section>
         <section class="home screen" hidden>
-            <h2 class="home__title">Hi!</h2>
-            <p class="home__player-name"></p>
-            <button class="home__start-button" type="button">Start</button>
             <nav class="navigation">
                 <button type="button" data-screen="home" class="navigation__button">Home</button>
                 <button type="button" data-screen="character" class="navigation__button">Character</button>
                 <button type="button" data-screen="settings" class="navigation__button">Settings</button>
             </nav>
-
+            <div class="home__container">
+                <h2 class="home__title">Hi!</h2>
+                <p class="home__player-name"></p>
+                <button class="home__start-button" type="button">Start</button>
+            </div>
         </section>
         <section class="character screen" hidden>
             <nav class="navigation">
@@ -124,10 +125,11 @@
                 <button type="button" data-screen="character" class="navigation__button">Character</button>
                 <button type="button" data-screen="settings" class="navigation__button">Settings</button>
             </nav>
-            <h2 class="settings__title">Settings</h2>
+            <div class="settings__container">
+                <h2 class="settings__title">Settings</h2>
             <p class="settings__description">Change your fighter name</p>
             <form class="settings__form">
-                <label class="settings__label" for="settings-player-name">New fighter name</label>
+                <label class="settings__label" for="settings-player-name">Change fighter name</label>
                 <input
                     class="settings__input"
                     type="text"
@@ -142,7 +144,14 @@
                 <p class="settings__error"></p>
                 <button class="settings__button" type="submit">Save name</button>
             </form>
+            <button
+                    class="settings__new-player-button"
+                    type="button"
+                >
+                    New Fighter
+                </button>
 
+            </div>
         </section>
         <section class="battle screen" hidden>
             <div class="battle__header">
@@ -294,7 +303,18 @@
 
         </section>
     </main>
+    <div class="battle-result" hidden>
+        <div class="battle-result__content">
+            <h2 class="battle-result__title">Battle finished</h2>
+            <span class="battle-result__message">
+            </span>
+            <button class="battle-result__button" type="button">Back to Home</button>
+
+        </div>
+
+    </div>
     <script src="./js/app.js" type="module"></script>
+
 </body>
 
 </html>

@@ -156,6 +156,7 @@ img {
 .registration__container,
 .home__container,
 .character__container,
+.battle-result__content,
 .settings__container {
     position: relative;
     width: min(100%, 900px);
@@ -176,6 +177,7 @@ img {
 .registration__container::before,
 .home__container::before,
 .character__container::before,
+.battle-result__content::before,
 .settings__container::before {
     position: absolute;
     top: 0;
@@ -191,7 +193,10 @@ img {
     );
     opacity: 0.8;
 }
-
+.home__container,
+.settings__container {
+    width: min(100%, 760px);
+}
 .registration__container::after,
 .home__container::after,
 .character__container::after,
@@ -281,11 +286,27 @@ img {
 }
 
 /* Все основные кнопки */
-
+.settings__new-player-button{
+    display: block;
+    width: min(100%, 470px);
+    margin: 20px auto 0;
+    color: var(--color-red-light)!important;
+    border-color: rgba(170, 75, 75, 0.65)!important;
+    background: rgba(70, 20, 20, 0.18)!important;
+    box-shadow: none!important;
+}
+.settings__new-player-button:hover {
+    color: #f3d6d6;
+    border-color: var(--color-red-light);
+    background: rgba(120, 35, 35, 0.28);
+    box-shadow: 0 0 18px rgba(150, 50, 50, 0.2);
+}
 .registration__button,
 .home__start-button,
 .settings__button,
+.settings__new-player-button,
 .navigation__button,
+.battle-result__button,
 .battle__exit-button {
     position: relative;
     min-height: 48px;
@@ -316,6 +337,7 @@ img {
 .registration__button:hover,
 .home__start-button:hover,
 .settings__button:hover,
+.battle-result__button:hover,
 .navigation__button:hover,
 .battle__exit-button:hover {
     border-color: var(--color-bronze-light);
@@ -330,7 +352,9 @@ img {
 .registration__button:active,
 .home__start-button:active,
 .settings__button:active,
+.settings__new-player-button:active,
 .navigation__button:active,
+.battle-result__button:active,
 .battle__exit-button:active {
     transform: translateY(1px);
 }
@@ -338,7 +362,9 @@ img {
 .registration__button:focus-visible,
 .home__start-button:focus-visible,
 .settings__button:focus-visible,
+.settings__new-player-button:focus-visible,
 .navigation__button:focus-visible,
+.battle-result__button:focus-visible,
 .battle__exit-button:focus-visible {
     outline: 2px solid var(--color-bronze-light);
     outline-offset: 4px;
@@ -581,13 +607,12 @@ img {
     justify-content: center;
 }
 
-.settings__container {
-    width: min(100%, 700px);
-}
+
 
 .settings__button {
     margin-top: 12px;
 }
+
 
 .character__title {
     position: relative;
@@ -625,27 +650,33 @@ img {
         grid-template-columns: 1fr;
         text-align: center;
     }
-
-    .character__avatar {
+    .character__avatar{
         width: min(100%, 320px);
         margin: 0 auto;
+        height: auto;
     }
 
     .character__avatar-picker {
         gap: 8px;
     }
 }
-
 @media (max-width: 440px) {
     .navigation {
         flex-direction: column;
     }
-
+    .character__avatar {
+        height: auto;
+    }
+    .character__profile {
+        grid-template-columns: 1fr;
+    }
+    .character__name {
+        text-align: center;
+    }
     .navigation__button {
         flex-basis: auto;
         width: 100%;
     }
-
     .character__stats {
         grid-template-columns: 1fr;
     }
@@ -660,4 +691,31 @@ img {
 .battle__attack-input:checked + .battle__zone-label {
     border-color: #c59a58;
     background-color: #3a3024;
+}
+
+.battle-result {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+
+    display: grid;
+    place-items: center;
+    padding: 24px;
+
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(6px);
+}
+
+.battle-result[hidden] {
+    display: none;
+}
+.battle-result__content {
+    width: min(100%, 520px);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+
+    text-align: center;
 }

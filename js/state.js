@@ -7,8 +7,6 @@ export const gameState = {
         maxHealth: 120,
         damage: 30,
         criticalChance: 0.2,
-
-
-
-    }
+    },
+    battle: null,
 }

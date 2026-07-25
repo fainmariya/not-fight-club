@@ -545,3 +545,59 @@ input[type="checkbox"] + .battle__zone-label::before {
         font-size: 11px;
     }
 }
+.log-attacker {
+    color: #d9b46f;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    text-shadow: 0 0 8px rgba(217, 180, 111, 0.25);
+}
+
+.log-opponent {
+    color: #c98278;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    text-shadow: 0 0 8px rgba(201, 130, 120, 0.22);
+}
+
+.log-zone {
+    display: inline-block;
+    padding: 1px 6px;
+    color: #e3d4b7;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    background: rgba(171, 132, 76, 0.12);
+    border: 1px solid rgba(171, 132, 76, 0.35);
+    border-radius: 4px;
+}
+
+.log-result {
+    color: #d4c3a1;
+    font-weight: 600;
+    font-style: italic;
+}
+
+.log-damage {
+    color: #e07166;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+    text-shadow: 0 0 7px rgba(224, 113, 102, 0.25);
+}
+.log-result--hit {
+    color: #d8c8a8;
+}
+
+.log-result--blocked {
+    color: #8fa8b8;
+    text-shadow: 0 0 7px rgba(143, 168, 184, 0.25);
+}
+
+.log-result--critical {
+    color: #f1b05e;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-shadow:
+        0 0 6px rgba(241, 176, 94, 0.45),
+        0 0 14px rgba(241, 176, 94, 0.18);
+}
